@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S.O - Atividade do Livro</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #d9d7d4;
+}
+
+body {
+    margin: 0;
+    padding: 35px 15px;
+    background: #d9d7d4;
+
+    font-family: "Caveat", cursive;
+
+    color: #77736f;
+}
+
+
+/* =====================================================
+   FOLHA
+===================================================== */
+
+.folha {
+    width: 720px;
+    min-height: 1060px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    background-color: #fffefa;
+
+    /*
+       LINHAS DA FOLHA
+    */
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 28px,
+            rgba(112, 137, 157, 0.38) 29px,
+            transparent 30px
+        );
+
+    padding-top: 18px;
+    padding-left: 73px;
+    padding-right: 28px;
+    padding-bottom: 50px;
+
+    box-shadow:
+        0 4px 18px rgba(0,0,0,0.18);
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   MARGEM DA FOLHA
+===================================================== */
+
+.folha::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 53px;
+
+    width: 1px;
+
+    background: rgba(210, 116, 128, 0.48);
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.cabecalho {
+
+    position: relative;
+
+    height: 112px;
+
+    z-index: 2;
+}
+
+
+/* S.O */
+
+.so {
+
+    position: absolute;
+
+    left: -7px;
+    top: -5px;
+
+    color: #633692;
+
+    font-size: 67px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    transform: rotate(-2deg);
+
+    text-shadow:
+        0.5px 0 #633692,
+        -0.5px 0 #633692;
+}
+
+
+/* Nome no canto superior */
+
+.nome {
+
+    position: absolute;
+
+    top: -10px;
+    right: 2px;
+
+    font-size: 16px;
+
+    color: #7d7874;
+
+    transform: rotate(-2deg);
+}
+
+
+/* Unidade / atividade */
+
+.atividade {
+
+    position: absolute;
+
+    top: 4px;
+
+    left: 178px;
+    right: 10px;
+
+    text-align: center;
+
+    font-size: 23px;
+
+    color: #77736f;
+
+    font-weight: 500;
+
+    transform: rotate(-1deg);
+}
+
+
+/* título */
+
+.titulo {
+
+    position: absolute;
+
+    top: 34px;
+
+    left: 112px;
+    right: 0;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    line-height: 24px;
+
+    color: #77736f;
+
+    font-weight: 500;
+
+    transform: rotate(-1deg);
+}
+
+
+/* =====================================================
+   TEXTO PRINCIPAL
+===================================================== */
+
+.conteudo {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #77736f;
+
+    font-size: 19px;
+
+    line-height: 29px;
+
+    font-weight: 500;
+
+    /*
+       IMPORTANTE:
+       o texto fica justificado,
+       como você pediu.
+    */
+
+    text-align: justify;
+
+    letter-spacing: 0.15px;
+}
+
+
+/* =====================================================
+   PARÁGRAFOS
+===================================================== */
+
+.paragrafo {
+
+    margin: 0;
+
+    margin-bottom: 8px;
+
+    text-indent: 0;
+}
+
+
+/* =====================================================
+   QUESTÕES
+===================================================== */
+
+.questao {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 5px;
+
+    margin-top: 6px;
+
+    color: #77736f;
+
+    font-size: 20px;
+
+    line-height: 29px;
+
+    font-weight: 600;
+
+    text-align: left;
+}
+
+
+/* número circulado */
+
+.numero {
+
+    flex-shrink: 0;
+
+    width: 25px;
+    height: 25px;
+
+    margin-top: 1px;
+
+    border: 2px solid #654092;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #654092;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    transform: rotate(-5deg);
+}
+
+
+/* texto da pergunta */
+
+.texto-questao {
+
+    color: #77736f;
+
+    font-size: 20px;
+
+    line-height: 29px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   RESPOSTA DA QUESTÃO 1
+===================================================== */
+
+.resposta {
+
+    margin-top: 0;
+
+    color: #77736f;
+
+    font-size: 19px;
+
+    line-height: 29px;
+
+    font-weight: 500;
+
+    text-align: justify;
+
+    letter-spacing: 0.1px;
+}
+
+
+/* =====================================================
+   ALTERNATIVAS
+===================================================== */
+
+.alternativas {
+
+    margin-top: 0;
+
+    color: #77736f;
+
+    font-size: 19px;
+
+    line-height: 29px;
+
+    font-weight: 500;
+
+    text-align: justify;
+}
+
+
+.alternativas p {
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =====================================================
+   PEQUENAS IMPERFEIÇÕES DA ESCRITA
+   para não parecer fonte de computador
+===================================================== */
+
+.paragrafo:nth-child(1) {
+    transform: rotate(-0.15deg);
+}
+
+.paragrafo:nth-child(2) {
+    transform: rotate(0.10deg);
+}
+
+.paragrafo:nth-child(3) {
+    transform: rotate(-0.12deg);
+}
+
+.resposta {
+    transform: rotate(0.08deg);
+}
+
+.alternativas p:nth-child(1) {
+    transform: rotate(-0.12deg);
+}
+
+.alternativas p:nth-child(2) {
+    transform: rotate(0.08deg);
+}
+
+.alternativas p:nth-child(3) {
+    transform: rotate(-0.10deg);
+}
+
+.alternativas p:nth-child(4) {
+    transform: rotate(0.10deg);
+}
+
+
+/* =====================================================
+   EFEITO DE LÁPIS
+===================================================== */
+
+.conteudo,
+.questao,
+.resposta,
+.alternativas {
+
+    text-shadow:
+        0.15px 0.15px 0 rgba(90,90,90,0.35);
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 760px) {
+
+    body {
+        padding: 0;
+    }
+
+    .folha {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding-left: 61px;
+        padding-right: 22px;
+
+        box-shadow: none;
+    }
+
+    .folha::before {
+        left: 43px;
+    }
+
+    .so {
+        font-size: 55px;
+    }
+
+    .atividade {
+        left: 100px;
+        font-size: 19px;
+    }
+
+    .titulo {
+        left: 70px;
+        font-size: 18px;
+    }
+
+    .conteudo,
+    .resposta,
+    .alternativas {
+
+        font-size: 17px;
+
+        line-height: 27px;
+    }
+
+    .questao,
+    .texto-questao {
+
+        font-size: 18px;
+
+        line-height: 27px;
+    }
+
+    .numero {
+
+        width: 23px;
+        height: 23px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =====================================================
+   IMPRESSÃO
+===================================================== */
+
+@media print {
+
+    html,
+    body {
+
+        background: white;
+
+        padding: 0;
+    }
+
+    .folha {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        box-shadow: none;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="folha">
+
+
+    <!-- =================================================
+         CABEÇALHO
+    ================================================== -->
+
+    <div class="cabecalho">
+
+        <div class="so">
+            S.O
+        </div>
+
+        <div class="nome">
+            Maria Eduarda
+        </div>
+
+        <div class="atividade">
+            Atividade do Livro
+        </div>
+
+        <div class="titulo">
+            "Comportamento ético e cidadania digital".
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TEXTO DA FOLHA
+    ================================================== -->
+
+    <div class="conteudo">
+
+
+        <p class="paragrafo">
+
+            Na antiguidade clássica, a ética estava ligada ao que os gregos chamavam de "bem viver" e incluía práticas que ajudavam a alcançar a felicidade plena. Já na filosofia Africana Ubuntu é baseada na ideia de que "eu sou porque nós somos".
+
+        </p>
+
+
+        <p class="paragrafo">
+
+            Filósofos e sociólogos reforçam que a ética é fundamental para a coesão social, promovendo harmonia e bem-estar coletivo. em resumo, a ética engloba princípios que orientam nosso comportamento na direção de uma convivência social saudável e de práticas pelo bem comum e pela dignidade humana, tanto no ambiente físico como no digital.
+
+        </p>
+
+
+        <p class="paragrafo">
+
+            Na internet os códigos de ética se tornam ainda mais importantes. As redes sociais são um dos espaços virtuais onde podemos podemos praticar a coletividade, no entanto é preciso usá-la com responsabilidade. A questão central que a ética digital buscar responder é como compartilhar o universo virtual com responsabilidade. A resposta está em um conjunto de valores que nos guiam para uma experiência mais humanizada, segura e justa para todos.
+
+        </p>
+
+
+        <!-- =================================================
+             QUESTÃO 1
+        ================================================== -->
+
+        <div class="questao">
+
+            <div class="numero">
+                1
+            </div>
+
+            <div class="texto-questao">
+                O que é ética e como ela entra no meio digital?
+            </div>
+
+        </div>
+
+
+        <div class="resposta">
+
+            Ética é os princípios que nos levam a uma convivência social saudável, e com boas práticas pelo bem de todos e pela dignidade humana, ela entra no mundo digital quando fica difícil distinguir os limites entre nós e os outros, pois mesmo sem saber quem está do outro lado, há comportamentos inadequados como racismo, transfobia, machismo, gordofobia e cyberbullying.
+
+        </div>
+
+
+        <!-- =================================================
+             QUESTÃO 2
+        ================================================== -->
+
+        <div class="questao">
+
+            <div class="numero">
+                2
+            </div>
+
+            <div class="texto-questao">
+                Analise as informações e indique a correta.
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ALTERNATIVAS
+        ================================================== -->
+
+        <div class="alternativas">
+
+            <p>
+                a. O respeito aos direitos digitais autorais é uma parte importante da ética digital
+            </p>
+
+            <p>
+                b. Não compartilhar notícias falsas é uma atitude relacionada à garantia de privacidade
+            </p>
+
+            <p>
+                c. Respeitar diferentes pontos de vista é um aspectos fundamental para garantir a propriedade intelectual
+            </p>
+
+            <p>
+                d. Evitar o plágio é uma prática ética de segurança
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
