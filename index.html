@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S.O - Atividade do Livro</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 35px 15px;
+    background: #dcdad7;
+    font-family: "Caveat", cursive;
+}
+
+/* =========================
+   FOLHA
+========================= */
+
+.folha {
+    width: 720px;
+    min-height: 1050px;
+    margin: auto;
+
+    position: relative;
+
+    padding: 24px 38px 45px 72px;
+
+    background-color: #fffefa;
+
+    /* linhas do caderno */
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 29px,
+            #bfcbd6 30px,
+            transparent 31px
+        );
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.18);
+
+    overflow: hidden;
+}
+
+/* margem vertical da folha */
+
+.folha::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 53px;
+
+    width: 1px;
+
+    background: #e2a6ac;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    position: relative;
+    height: 105px;
+}
+
+/* S.O exatamente como destaque da folha */
+
+.so {
+    position: absolute;
+
+    left: -4px;
+    top: 0px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 63px;
+    font-weight: 700;
+
+    color: #5b328d;
+
+    line-height: .9;
+
+    transform: rotate(-2deg);
+}
+
+/* texto pequeno no alto */
+
+.nome {
+    position: absolute;
+
+    right: 0;
+    top: -17px;
+
+    font-size: 16px;
+
+    color: #77727b;
+
+    transform: rotate(-2deg);
+}
+
+/* título central */
+
+.atividade {
+    position: absolute;
+
+    left: 85px;
+    right: 20px;
+    top: 17px;
+
+    text-align: center;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    color: #66616a;
+
+    transform: rotate(-1deg);
+}
+
+.subtitulo {
+    position: absolute;
+
+    left: 70px;
+    right: 10px;
+    top: 48px;
+
+    text-align: center;
+
+    font-size: 23px;
+
+    color: #66616a;
+
+    transform: rotate(-1deg);
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.conteudo {
+    position: relative;
+    z-index: 2;
+
+    font-size: 19px;
+    line-height: 30px;
+
+    color: #66636a;
+
+    font-weight: 500;
+
+    text-align: justify;
+
+    letter-spacing: .1px;
+}
+
+/* parágrafos */
+
+.paragrafo {
+    margin: 0 0 9px 0;
+}
+
+/* =========================
+   PERGUNTAS
+========================= */
+
+.questao {
+    margin-top: 7px;
+
+    font-size: 20px;
+
+    line-height: 30px;
+
+    font-weight: 600;
+
+    color: #625d67;
+
+    text-align: left;
+}
+
+.resposta {
+    margin-top: 0;
+
+    font-size: 19px;
+
+    line-height: 30px;
+
+    font-weight: 500;
+
+    color: #66636a;
+
+    text-align: justify;
+}
+
+/* =========================
+   ALTERNATIVAS
+========================= */
+
+.alternativas {
+    margin-top: 0;
+
+    font-size: 19px;
+
+    line-height: 30px;
+
+    color: #66636a;
+
+    text-align: justify;
+}
+
+.alternativas div {
+    margin: 0;
+}
+
+/* =========================
+   SEGUNDA FOLHA
+========================= */
+
+.folha2 {
+    margin-top: 40px;
+}
+
+/* número no canto */
+
+.numero {
+    position: absolute;
+
+    right: 22px;
+    top: 55px;
+
+    font-size: 54px;
+
+    color: #a89bb6;
+
+    font-weight: 600;
+
+    transform: rotate(-5deg);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 760px) {
+
+    body {
+        padding: 10px 0;
+    }
+
+    .folha {
+        width: 100%;
+        min-height: 100vh;
+
+        padding-left: 62px;
+        padding-right: 25px;
+
+        box-shadow: none;
+    }
+
+    .folha::before {
+        left: 44px;
+    }
+
+    .so {
+        font-size: 53px;
+    }
+
+    .atividade {
+        left: 55px;
+        font-size: 21px;
+    }
+
+    .subtitulo {
+        left: 40px;
+        font-size: 19px;
+    }
+
+    .conteudo,
+    .resposta,
+    .alternativas {
+        font-size: 17px;
+        line-height: 28px;
+    }
+
+    .questao {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PRIMEIRA FOLHA
+===================================================== -->
+
+<div class="folha">
+
+    <div class="cabecalho">
+
+        <div class="so">
+            S.O
+        </div>
+
+        <div class="nome">
+            Maria Eduarda
+        </div>
+
+        <div class="atividade">
+            Atividade do Livro
+        </div>
+
+        <div class="subtitulo">
+            "Comportamento ético e cidadania digital".
+        </div>
+
+    </div>
+
+
+    <div class="conteudo">
+
+        <p class="paragrafo">
+            Na antiguidade clássica, a ética estava ligada ao que os gregos chamavam de "bem viver" e incluía práticas que ajudavam a alcançar a felicidade plena. Já na filosofia Africana Ubuntu é baseada na ideia de que "eu sou porque nós somos".
+        </p>
+
+        <p class="paragrafo">
+            Filósofos e sociólogos reforçam que a ética é fundamental para a coesão social, promovendo harmonia e bem-estar coletivo. em resumo, a ética engloba princípios que orientam nosso comportamento na direção de uma convivência social saudável e de práticas pelo bem comum e pela dignidade humana, tanto no ambiente físico como no digital.
+        </p>
+
+        <p class="paragrafo">
+            Na internet os códigos de ética se tornam ainda mais importantes. As redes sociais são um dos espaços virtuais onde podemos podemos praticar a coletividade, no entanto é preciso usá-la com responsabilidade. A questão central que a ética digital buscar responder é como compartilhar o universo virtual com responsabilidade. A resposta está em um conjunto de valores que nos guiam para uma experiência mais humanizada, segura e justa para todos.
+        </p>
+
+
+        <div class="questao">
+            1- O que é ética e como ela entra no meio digital?
+        </div>
+
+        <div class="resposta">
+            Ética é os princípios que nos levam a uma convivência social saudável, e com boas práticas pelo bem de todos e pela dignidade humana, ela entra no mundo digital quando fica difícil distinguir os limites entre nós e os outros, pois mesmo sem saber quem está do outro lado, há comportamentos inadequados como racismo, transfobia, machismo, gordofobia e cyberbullying.
+        </div>
+
+
+        <div class="questao">
+            2- Analise as informações e indique a correta.
+        </div>
+
+        <div class="alternativas">
+
+            <div>
+                a. O respeito aos direitos digitais autorais é uma parte importante da ética digital
+            </div>
+
+            <div>
+                b. Não compartilhar notícias falsas é uma atitude relacionada à garantia de privacidade
+            </div>
+
+            <div>
+                c. Respeitar diferentes pontos de vista é um aspectos fundamental para garantir a propriedade intelectual
+            </div>
+
+            <div>
+                d. Evitar o plágio é uma prática ética de segurança
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
